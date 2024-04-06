@@ -4,7 +4,7 @@
 *                                                Avaliação N1 - Parte I  *
 * Objetivo: Controlar Estoque de produtos                                *
 *                                                                        *
-* Autores: <nomes que compõem a dupla>                                   *
+* Autores: <Breno Saraiva e Enzo Dorta>                                  *
 *                                                     Data:02/04/2024    *
 * ---------------------------------------------------------------------- *
 */
