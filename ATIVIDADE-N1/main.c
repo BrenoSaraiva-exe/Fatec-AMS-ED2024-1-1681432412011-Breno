@@ -1,3 +1,14 @@
+/* 
+* ---------------------------------------------------------------------- *
+* FATEC-São Caetano do Sul Estrutura de Dados                            *
+*                                                Avaliação N1 - Parte I  *
+* Objetivo: Controlar Estoque de produtos                                *
+*                                                                        *
+* Autores: <Breno Saraiva e Enzo Dorta>                                  *
+*                                                     Data:02/04/2024    *
+* ---------------------------------------------------------------------- *
+*/
+
 #include "buscaEstoque.c"
 
 #include "addEstoque.c"
