@@ -9,38 +9,85 @@
 * ---------------------------------------------------------------------- *
 */
 
-#include "buscaEstoque.c"
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <locale.h>
 
-#include "addEstoque.c"
+#include "addEstoque.h"
+#include "buscaEstoque.h"
+#include "baixaEstoque.h"
+#include "listarEstoque.h"
 
-/*
-Dado 4 - dupla: Breno e Enzo
-ID = o item de identifacação do produto
-Nome= nome do produto 
-Quantidade = quantidade do produto
-Valor = preço do produto
-*/
+int main(void) 
+{
+  Lista * Lista;
 
-int main(void) {
-  int opcao;
-
-  addEstoque();
+  Lista = listaCria();
   
-  /*
-  printf("Escolha sua opção:\n 0 - Sair do programa\n 1 - Adicionar produto\n 2 - Buscar produto");
-  scanf("%d", &opcao);
+  int opcao, saida = 1;
+  
+  int id;
+  char nome[30];
+  int quant;
+  float valor;
+  
+  printf("Escolha sua opção:\n");
+  printf("0 - Sair do programa\n");
+  printf("1 - Adicionar um produto\n");
+  printf("2 - Buscar produto\n");
+  printf("3 - Baixa em produto\n");
+  printf("4 - Listar todos\n");
 
+  while(saida != 0)
+  { 
+  printf("\nOpção: "); scanf("%d", &opcao);
+    
   switch(opcao)
+  {
   case 0:
-    exit(0);
-    break;
+    saida = 0;
+  break;
 
   case 1:
+    printf("\nDigite cada dado para ser inserido:\n");
+
+    printf("ID: ");
+    scanf("%d", &id);
     
+    printf("Nome: ");
+    scanf("%s", nome);
+    
+    printf("Quantidade: ");
+    scanf("%d", &quant);
+    
+    printf("Valor(ponto para representar decimal): ");
+    scanf("%f", &valor);
+    
+    Lista = addEstoque(&Lista, id,nome,quant,valor);
   break;
 
   case 2:
+
+    printf("Digite o ID do produto desejado: ");
+    scanf("%d", &id);
+    
+    buscaEstoque(&Lista,&id);
+  break;
+    
+  case 3:
+    printf("Digite o ID do produto desejado: ");
+    scanf("%d", &id);
+
+    printf("Digite a quantidade a ser reduzida: ");
+    scanf("%d", &quant);
+    
+    baixaEstoque(&Lista, &id, &quant);
   break;
 
-  */
+  case 4:
+    listarEstoque(&Lista);
+  break;
+  }    
+  }
 }
