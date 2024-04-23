@@ -88,7 +88,7 @@ void calcAritmetica(float * a, float * b, char * operador){
 
 }
 
-char * funcUnica(Pilha * pilha, float * a, float * b, char * operador, char strCalculo[]){
+void funcUnica(Pilha * pilha, float * a, float * b, char * operador, char strCalculo[]){
   
   static int chamada = 0;
   
@@ -96,9 +96,9 @@ char * funcUnica(Pilha * pilha, float * a, float * b, char * operador, char strC
   sprintf(strCalculo, "%.2f %c %.2f", *b, *operador, *a);
   pushArit(pilha,strCalculo);
   chamada = 1;
-  return strCalculo;
+  return;
   }
-  else return strCalculo;
+  else return;
   
 }
 
@@ -109,13 +109,14 @@ void opAritmetica(Pilha * pilha, float * a, float * b, char * operador, int * co
   char novoCalc[ARR_SIZE];
 
   funcUnica(pilha, a, b, operador, strCalculo);
-  
+
+  if(*count > 0){
       strcpy(opNaLista, &pilha->arit[pilha->topo]);
       sprintf(novoCalc, "%c %.2f", *operador, *a);
     
       sprintf(strCalculo, "(%s) %s", opNaLista, novoCalc);
       pushArit(pilha,strCalculo);
-  
+  }
 }
 
 float calcular(float * operando1, float * operando2, char * operador) {
