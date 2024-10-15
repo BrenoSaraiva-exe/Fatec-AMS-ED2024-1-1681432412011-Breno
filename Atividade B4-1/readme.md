@@ -8,7 +8,7 @@ O Bubble Sort originalmente passa por cada index do array verificando se o seu p
 
 Essas passagens pela lista são feitas, de forma fixa, **n** (quantidade de elementos na lista) vezes, para que independente do quao desordenado o array estiver, ao realizar essa passagem o número de vezes correspondente ao tamanho da lista, ele sempre ordenará, com certeza, todos os elementos do array.
 
-![alt text]()
+![{BBF8797D-69AC-4B5F-A296-CBE01F80BA90}](https://github.com/user-attachments/assets/551ed7e5-0399-4c79-bd09-a2bca93e20b0)
 
 ## Problema do Bubble Sort
 
